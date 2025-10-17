@@ -34,7 +34,7 @@ This is a **bifurcated, privilege-separated** design:
 
 ```
 ┌─────────────────────────────────────┐
-│   GNOME Shell Extension (User)     │
+│   GNOME Shell Extension (User)      │
 │   - UI/Menu                         │
 │   - No privileges required          │
 └──────────┬──────────────────────────┘
@@ -88,7 +88,7 @@ sudo systemctl enable --now prometheus.service
 # Install the GNOME extension
 ./scripts/install-extension.sh
 
-# Restart GNOME Shell: Alt+F2, type 'r', press Enter
+# Restart GNOME Shell: Logout and back in
 ```
 
 ### Building from Source
