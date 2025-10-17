@@ -1,0 +1,7 @@
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.DBus.Call" &&
+        action.lookup("interface") == "org.jesternet.Boreas" &&
+        subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});

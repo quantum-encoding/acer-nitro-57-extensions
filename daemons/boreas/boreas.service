@@ -1,0 +1,21 @@
+[Unit]
+Description=Boreas Fan Control Daemon
+After=network.target
+
+[Service]
+Type=dbus
+BusName=org.jesternet.Boreas
+ExecStart=/usr/local/bin/boreas-daemon
+Restart=on-failure
+RestartSec=5s
+
+# Security hardening
+CapabilityBoundingSet=CAP_DAC_OVERRIDE CAP_SYS_RAWIO
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/sys/kernel/debug/ec/ec0
+
+[Install]
+WantedBy=multi-user.target

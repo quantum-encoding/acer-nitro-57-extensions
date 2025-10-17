@@ -1,0 +1,21 @@
+[Unit]
+Description=Prometheus Performance Control Daemon
+After=network.target
+
+[Service]
+Type=dbus
+BusName=org.jesternet.Prometheus
+ExecStart=/usr/local/bin/prometheus-daemon
+Restart=on-failure
+RestartSec=5s
+
+# Security hardening
+CapabilityBoundingSet=CAP_DAC_OVERRIDE
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/sys/devices/system/cpu
+
+[Install]
+WantedBy=multi-user.target

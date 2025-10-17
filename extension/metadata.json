@@ -1,0 +1,7 @@
+{
+  "name": "Boreas Fan Control",
+  "description": "Sovereign thermal control for Acer Nitro AN515-57",
+  "uuid": "boreas@jesternet.org",
+  "shell-version": ["49"],
+  "version": 1
+}
